@@ -9,7 +9,7 @@ from transformers import ElectraTokenizer, BertTokenizer, RobertaTokenizer
 from datasets import load_dataset
 
 
-class DataLoader():
+class DataTensorLoader():
     def __init__(self, arch):
 
         allowed_arch = ['electra', 'bert', 'roberta']

@@ -7,7 +7,7 @@ import torch.nn as nn
 from torch.utils.data import TensorDataset
 from torch.utils.data import DataLoader
 from transformers import AdamW
-from data_prep import DataLoader
+from data_prep import DataTensorLoader
 import sys
 import os
 import argparse
@@ -115,7 +115,7 @@ if __name__ == "__main__":
     device = get_default_device()
 
     # Load the data as tensors
-    dataloader = DataLoader(arch)
+    dataloader = DataTensorLoader(arch)
     input_ids_train, mask_train, labels_train = dataloader.get_train()
     input_ids_test, mask_test, labels_test = dataloader.get_test()
 
