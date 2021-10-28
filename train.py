@@ -155,7 +155,7 @@ if __name__ == "__main__":
         scheduler.step()
 
         # evaluate on validation set
-        eval(val_dl, model, criterion, device)
+        eval(test_dl, model, criterion, device)
     
     # evaluate on test set
     print("Test set\n")
