@@ -12,8 +12,8 @@ def get_data(arch):
     dataset = load_dataset('ag_news')
     print(dataset[0])
 
-def get_train(arch, filepath='../data/train.txt'):
-    return get_data(filepath, arch)
+def get_train(arch):
+    return get_data(arch)
 
-def get_test(arch, filepath='../data/test.txt'):
-    return get_data(filepath, arch)
+def get_test(arch):
+    return get_data(arch)
