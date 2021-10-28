@@ -10,7 +10,9 @@ from datasets import load_dataset
 
 def get_data(arch):
     dataset = load_dataset('ag_news')
-    print(dataset[0])
+    train = dataset['train']
+    test = dataset['test']
+    print(train[:5])
 
 def get_train(arch):
     return get_data(arch)
