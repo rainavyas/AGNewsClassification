@@ -7,7 +7,7 @@ import torch.nn as nn
 from torch.utils.data import TensorDataset
 from torch.utils.data import DataLoader
 from transformers import AdamW
-from data_prep import get_train, get_val, get_test
+from data_prep import get_train, get_test
 import sys
 import os
 import argparse
@@ -116,16 +116,13 @@ if __name__ == "__main__":
 
     # Load the data as tensors
     input_ids_train, mask_train, labels_train = get_train(arch)
-    input_ids_val, mask_val, labels_val = get_val(arch)
     input_ids_test, mask_test, labels_test = get_test(arch)
 
     # Use dataloader to handle batches
     train_ds = TensorDataset(input_ids_train, mask_train, labels_train)
-    val_ds = TensorDataset(input_ids_val, mask_val, labels_val)
     test_ds = TensorDataset(input_ids_test, mask_test, labels_test)
 
     train_dl = DataLoader(train_ds, batch_size=batch_size, shuffle=True)
-    val_dl = DataLoader(val_ds, batch_size=batch_size)
     test_dl = DataLoader(test_ds, batch_size=batch_size)
 
     # Initialise classifier
