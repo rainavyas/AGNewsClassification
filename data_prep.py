@@ -12,7 +12,8 @@ def get_data(arch):
     dataset = load_dataset('ag_news')
     train = dataset['train']
     test = dataset['test']
-    print(train[:5])
+    print(train['label'])
+    print(len(train['label']))
 
 def get_train(arch):
     return get_data(arch)
