@@ -1,5 +1,5 @@
 '''
-Prepare the Twitter Emotions dataset as tokenized torch
+Prepare the AG News dataset as tokenized torch
 ids tensor and attention mask
 '''
 
